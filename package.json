@@ -20,6 +20,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "antd": "^5.7.1",
     "classes": "^0.3.0",
     "classname": "^0.0.0",
     "sass": "^1.63.6"
