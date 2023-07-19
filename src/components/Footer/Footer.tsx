@@ -1,14 +1,12 @@
-import { memo } from "react";
+import React from "react";
 import classes from "./Footer.module.scss";
 
-interface IFooter {}
-
-const Footer = memo(({}: IFooter) => {
+const Footer = () => {
   return (
     <footer className={classes.footer}>
       <h1>Footer</h1>
     </footer>
   );
-});
+};
 
 export default Footer;

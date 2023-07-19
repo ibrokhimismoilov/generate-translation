@@ -1,14 +1,12 @@
-import { memo } from "react";
+import React from "react";
 import classes from "./Header.module.scss";
 
-interface IHeader {}
-
-const Header = memo(({}: IHeader) => {
+const Header = () => {
   return (
     <header className={classes.header}>
       <h1>Header</h1>
     </header>
   );
-});
+};
 
 export default Header;
