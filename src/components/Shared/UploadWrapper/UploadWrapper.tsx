@@ -3,10 +3,9 @@
 import React, { useMemo, useState } from "react";
 import classes from "./UploadWrapper.module.scss";
 import { UploadBox } from "./UploadBox";
-import { UploadFile, UploadProps, message } from "antd";
-import { isJson } from "@/utils/general";
+import { UploadFile, message } from "antd";
 import CreateJSON from "./CreateJSON";
-import TextArea from "antd/es/input/TextArea";
+import { isJson } from "@/utils/general";
 
 const UploadWrapper = () => {
   const [left, setLeft] = useState<object | null>(null);

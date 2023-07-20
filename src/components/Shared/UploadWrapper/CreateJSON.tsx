@@ -24,6 +24,7 @@ const CreateJSON = ({ left, right }: IProps) => {
       input.value = JSON.stringify(result, null, 4);
       document.body.appendChild(input);
       input.select();
+      //   @ts-ignore
       document.execCommand("copy");
       document.body.removeChild(input);
       notification.success({ message: "Copied" });
@@ -33,14 +34,16 @@ const CreateJSON = ({ left, right }: IProps) => {
 
   return (
     <>
-      <TextArea
-        size="large"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        id="textarea"
-        style={{ width: "100%" }}
-        rows={10}
-      />
+      {value && (
+        <TextArea
+          size="large"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          id="textarea"
+          style={{ width: "100%" }}
+          rows={10}
+        />
+      )}
       <Button size="large" type="primary" onClick={copyToClipBoard}>
         Generate & Copy
       </Button>
