@@ -1,0 +1,27 @@
+.main {
+  padding: 60px 0;
+
+  .wrapper {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .bottom {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.uploadBox {
+  width: 100%;
+
+  .title {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+}

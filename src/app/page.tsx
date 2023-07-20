@@ -1,12 +1,10 @@
-import { Container } from "@/components/Shared";
+import { Container, UploadWrapper } from "@/components/Shared";
 
 export default function Home() {
   return (
-    <div className={""}>
-      <h1>Home</h1>
-
+    <div className={"aa"}>
       <Container>
-        <p>Lorem, ipsum dolor.</p>
+        <UploadWrapper />
       </Container>
     </div>
   );
