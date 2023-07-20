@@ -26,10 +26,5 @@
     "classes": "^0.3.0",
     "classname": "^0.0.0",
     "sass": "^1.63.6"
-  },
-  "browser": {
-    "fs": false,
-    "os": false,
-    "path": false
   }
 }
