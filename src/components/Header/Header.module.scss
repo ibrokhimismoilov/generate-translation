@@ -1,4 +1,24 @@
 .header {
-  height: 80px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  .inner {
+    height: 70px;
+    display: flex;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      max-width: 150px;
+      width: 100%;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      // background: red;
+    }
+  }
 }
