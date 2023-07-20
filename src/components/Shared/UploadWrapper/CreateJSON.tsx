@@ -14,8 +14,8 @@ const CreateJSON = ({ left, right }: IProps) => {
   const [value, setValue] = useState("");
 
   const copyToClipBoard = useCallback(() => {
-    if (!left) message.error("Please upload left translation file");
-    else if (!right) message.error("Please upload right translation file");
+    if (!left) message.error("Iltimos asosiy JSON faylni yuklang!");
+    else if (!right) message.error("Iltimos qo'shimcha JSON faylni yuklang!");
     else {
       const result = { ...left, ...right };
       console.log("result", result);

@@ -6,20 +6,21 @@ import { Upload, UploadProps } from "antd";
 
 const { Dragger } = Upload;
 
-export const UploadBox = (props: UploadProps) => {
+interface IProps {
+  title?: string;
+  description?: string;
+  draggerProps?: UploadProps;
+}
+
+export const UploadBox = ({ title, description, draggerProps }: IProps) => {
   return (
     <div className={classes.uploadBox}>
-      <Dragger {...props} name={"file"} multiple={false} maxCount={1}>
+      <Dragger {...draggerProps} name={"file"} multiple={false} maxCount={1}>
         <p className="ant-upload-drag-icon">
           <InboxOutlined />
         </p>
-        <p className="ant-upload-text">
-          Click or drag file to this area to upload
-        </p>
-        <p className="ant-upload-hint">
-          Support for a single or bulk upload. Strictly prohibited from
-          uploading company data or other banned files.
-        </p>
+        <p className="ant-upload-text">{title}</p>
+        <p className="ant-upload-hint">{description}</p>
       </Dragger>
     </div>
   );

@@ -14,54 +14,62 @@ const UploadWrapper = () => {
   const [leftFileList, setLeftFileList] = useState<UploadFile[]>([]);
   const [rightFileList, setRightFileList] = useState<UploadFile[]>([]);
 
-  const leftProps: UploadProps = useMemo(
+  const leftProps = useMemo(
     () => ({
-      onRemove: () => {
-        setLeftFileList([]);
+      title: "Yuklash uchun faylni ushbu hududga bosing yoki ustiga joylang",
+      description: "Asosiy translation.json faylni yuklang",
+      draggerProps: {
+        onRemove: () => {
+          setLeftFileList([]);
+        },
+        beforeUpload: (file: any) => {
+          const reader = new FileReader();
+
+          reader.onload = (e: any) => {
+            if (isJson(e.target.result)) {
+              message.success("Muvofaqqiyatli yuklandi");
+              setLeft(JSON.parse(e.target.result));
+            } else message.error("Noto'g'ri JSON file yuklanmoqda");
+          };
+
+          reader.readAsText(file);
+
+          setLeftFileList([file]);
+
+          return false;
+        },
+        fileList: leftFileList,
       },
-      beforeUpload: (file) => {
-        const reader = new FileReader();
-
-        reader.onload = (e: any) => {
-          if (isJson(e.target.result)) {
-            message.success("Success");
-            setLeft(JSON.parse(e.target.result));
-          } else message.error("JSON file xato");
-        };
-
-        reader.readAsText(file);
-
-        setLeftFileList([file]);
-
-        return false;
-      },
-      fileList: leftFileList,
     }),
     [leftFileList]
   );
 
-  const rightProps: UploadProps = useMemo(
+  const rightProps = useMemo(
     () => ({
-      onRemove: () => {
-        setRightFileList([]);
+      title: "Yuklash uchun faylni ushbu hududga bosing yoki ustiga joylang",
+      description: "Qoshimcha translation.json faylni yuklang",
+      draggerProps: {
+        onRemove: () => {
+          setRightFileList([]);
+        },
+        beforeUpload: (file: any) => {
+          const reader = new FileReader();
+
+          reader.onload = (e: any) => {
+            if (isJson(e.target.result)) {
+              message.success("Muvofaqqiyatli yuklandi");
+              setRight(JSON.parse(e.target.result));
+            } else message.error("Noto'g'ri JSON file yuklanmoqda");
+          };
+
+          reader.readAsText(file);
+
+          setRightFileList([file]);
+
+          return false;
+        },
+        fileList: rightFileList,
       },
-      beforeUpload: (file) => {
-        const reader = new FileReader();
-
-        reader.onload = (e: any) => {
-          if (isJson(e.target.result)) {
-            message.success("Success");
-            setRight(JSON.parse(e.target.result));
-          } else message.error("JSON file xato");
-        };
-
-        reader.readAsText(file);
-
-        setRightFileList([file]);
-
-        return false;
-      },
-      fileList: rightFileList,
     }),
     [rightFileList]
   );

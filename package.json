@@ -1,5 +1,6 @@
 {
   "name": "generate-translation",
+  "author": "Ibrokhim Ismoilov",
   "version": "0.1.0",
   "private": true,
   "scripts": {
