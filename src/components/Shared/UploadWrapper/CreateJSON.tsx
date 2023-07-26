@@ -18,7 +18,6 @@ const CreateJSON = ({ left, right }: IProps) => {
     else if (!right) message.error("Iltimos qo'shimcha JSON faylni yuklang!");
     else {
       const result = { ...left, ...right };
-      console.log("result", result);
       const json = JSON.stringify(result, null, 4);
       const input = document.createElement("input");
       input.value = JSON.stringify(result, null, 4);
