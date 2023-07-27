@@ -1,5 +1,3 @@
-"use client";
-
 import classes from "./UploadWrapper.module.scss";
 import { InboxOutlined } from "@ant-design/icons";
 import { Upload, UploadProps } from "antd";

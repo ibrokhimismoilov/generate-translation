@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Button, message, notification, Input } from "antd";
 
 const { TextArea } = Input;
